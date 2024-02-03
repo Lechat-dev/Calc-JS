@@ -50,7 +50,7 @@ input {
 } */
 
 .calc-container {
-  width: 80vw;
+  width: 800px;
   background-color: darkgrey;
   padding: 15px;
   position: absolute;
