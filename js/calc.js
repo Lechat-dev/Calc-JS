@@ -182,6 +182,12 @@ refs.form.addEventListener('click', e => {
 refs.form.addEventListener('click', e => {
   if (e.target.dataset.id === 'sqrt') {
     const last = refs.expression.length - 1;
+    if (Calc.compute(refs.expression) < 0) {
+      refs.display.value = 'Err(square root of negative number)';
+      setTimeout(() => {
+        refs.display.value = refs.expression.join('') + refs.operand;
+      }, 3000);
+    }
 
     if (!refs.expression.length && !refs.operand) {
       refs.display.value = Math.sqrt(Calc.compute(refs.expression));
